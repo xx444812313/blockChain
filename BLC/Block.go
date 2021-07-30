@@ -42,3 +42,8 @@ func NewBlock(data string, height int64, prevBlockHash []byte) *Block {
 	block.SetHash()
 	return block
 }
+
+//CreateGenesisBlock 生成创世区块
+func CreateGenesisBlock(data string) *Block {
+	return NewBlock(data, 1, bytes.Repeat([]byte{0}, 32))
+}
