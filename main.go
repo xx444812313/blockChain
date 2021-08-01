@@ -1,13 +1,15 @@
 package main
 
 import (
-	"blockChain/BLC"
-	"github.com/davecgh/go-spew/spew"
+	"fmt"
+	"math"
+	"math/big"
 )
 
 func main() {
 
-	chain := BLC.CreateBlockchainWithGenesisBlock()
-	spew.Dump(chain)
+	fmt.Println(math.MaxInt64 )
+	bigInt := big.NewInt(math.MaxInt64)
+	fmt.Println(bigInt.Mul(bigInt, bigInt).String())
 
 }
