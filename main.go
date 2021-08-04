@@ -1,8 +1,6 @@
 package main
 
-import (
-	"blockChain/BLC"
-)
+import "blockChain/BLC"
 
 func main() {
 

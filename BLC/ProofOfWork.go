@@ -31,6 +31,22 @@ func (pow *ProofOfWork) prepareData(nonce int) []byte {
 	return data
 }
 
+//isValid 判断hash有效性
+func (pow *ProofOfWork) IsValid() bool {
+	//1.pow.Block.Hash
+	//2.pow.Target
+
+	var hashInt big.Int
+	hashInt.SetBytes(pow.Block.Hash)
+
+	if pow.target.Cmp(&hashInt) == 1 { //当前区块hash大于
+		return true
+	} else {
+		return false
+	}
+
+}
+
 func (pow *ProofOfWork) Run() ([]byte, int64) {
 	//1. 讲Block的属性拼接成字节数组
 
